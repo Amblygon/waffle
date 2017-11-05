@@ -41,59 +41,22 @@ Removing an edge takes O(1) time in this implementation. Queries like whether th
 Adjacency list implemenation
 ----------------------------
 
-V in the function call represents the number of nodes - remember to change the placeholder to the required value or input. Don''t forget to account of the fact that the given graph deals entirely from index 0. Code for Adjacency list implementation taken from [GeeksforGeeks](http://www.geeksforgeeks.org/graph-and-its-representations/), presented with minor modifications and simplifications. 
+V in the function call represents the number of nodes - remember to change the placeholder to the required value or input. Don''t forget to account of the fact that the given graph deals entirely from index 0. Vectors used. Code for Adjacency list implementation taken from [GeeksforGeeks](http://www.geeksforgeeks.org/graph-implementation-using-stl-for-competitive-programming-set-2-weighted-graph/), presented with minor modifications. 
 
 ~~~~
-struct AdjListNode {
-    int dest;
-    struct AdjListNode* next;
-};
-
-struct AdjList {
-    struct AdjListNode *head;
-};
-
-struct Graph {
-    int V;
-    struct AdjList* array;
-};
+#include<bits/stdc++.h>
+using namespace std;
  
-struct AdjListNode* newAdjListNode(int dest) {
-    struct AdjListNode* newNode = (struct AdjListNode*) malloc(sizeof(struct AdjListNode));
-    newNode->dest = dest;
-    newNode->next = NULL;
-    return newNode;
-}
- 
-struct Graph* createGraph(int V) {
-    struct Graph* graph = (struct Graph*) malloc(sizeof(struct Graph));
-    graph->V = V;
- 
-    graph->array = (struct AdjList*) malloc(V * sizeof(struct AdjList));
-    
-    int i;
-    for (i = 0; i < V; ++i)
-        graph->array[i].head = NULL;
- 
-    return graph;
-}
- 
-// Adds an edge to an undirected graph
-void addEdge(struct Graph* graph, int src, int dest)
+void addEdge(vector<int> adj[], int u, int v)
 {
-    // Add an edge from src to dest.  A new node is added to the adjacency
-    // list of src.  The node is added at the begining
-    struct AdjListNode* newNode = newAdjListNode(dest);
-    newNode->next = graph->array[src].head;
-    graph->array[src].head = newNode;
- 
-    // Since graph is undirected, add an edge from dest to src also
-    newNode = newAdjListNode(src);
-    newNode->next = graph->array[dest].head;
-    graph->array[dest].head = newNode;
+    adj[u].push_back(v);
+    adj[v].push_back(u);
 }
-
-//Code for main - function calls
-    struct Graph* graph = createGraph(V);
-    addEdge(graph, a, b)
+ 
+ 
+// Code for main function - function calls
+    vector<int> adj[V];
+    addEdge(adj, a, b);
+    DFS(adj, V);
+    
 ~~~~
