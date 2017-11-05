@@ -44,19 +44,14 @@ Adjacency list implemenation
 V in the function call represents the number of nodes - remember to change the placeholder to the required value or input. Don''t forget to account of the fact that the given graph deals entirely from index 0. Vectors used. Code for Adjacency list implementation taken from [GeeksforGeeks](http://www.geeksforgeeks.org/graph-implementation-using-stl-for-competitive-programming-set-2-weighted-graph/), presented with minor modifications. 
 
 ~~~~
-#include<bits/stdc++.h>
-using namespace std;
- 
 void addEdge(vector<int> adj[], int u, int v)
 {
     adj[u].push_back(v);
     adj[v].push_back(u);
 }
- 
- 
+  
 // Code for main function - function calls
     vector<int> adj[V];
     addEdge(adj, a, b);
-    DFS(adj, V);
     
 ~~~~
