@@ -27,8 +27,8 @@ void initialize() {
 
     int x, y, nodes, edges;
     initialize();       
-    cin >> nodes;       //Number of nodes
-    cin >> edges;       //Number of edges
+    cin >> nodes;       
+    cin >> edges;
     for(int i = 0;i < edges;++i) {
         cin >> x >> y;
         A[x][y] = true;
@@ -36,10 +36,12 @@ void initialize() {
     
 ~~~~
 
-Removing an edge takes O(1) time in this implementation. Queries like whether there is an edge from vertex ‘u’ to vertex ‘v’ are efficient and can be done O(1).
+Removing an edge takes O(1) time in this implementation. Queries like whether there is an edge from vertex ‘u’ to vertex ‘v’ are efficient and can be done O(1). Heavy memory utilisation. 
 
 Adjacency list implemenation
 ----------------------------
+
+V in the function call represents the number of nodes - remember to change the placeholder to the required value or input. Don''t forget to account of the fact that the given graph deals entirely from index 0. Code for Adjacency list implementation taken from [GeeksforGeeks](http://www.geeksforgeeks.org/graph-and-its-representations/), presented with minor modifications and simplifications. 
 
 ~~~~
 struct AdjListNode {
@@ -90,4 +92,8 @@ void addEdge(struct Graph* graph, int src, int dest)
     newNode->next = graph->array[dest].head;
     graph->array[dest].head = newNode;
 }
+
+//Code for main - function calls
+    struct Graph* graph = createGraph(V);
+    addEdge(graph, a, b)
 ~~~~
