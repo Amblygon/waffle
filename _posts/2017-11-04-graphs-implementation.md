@@ -42,7 +42,9 @@ Adjacency list implemenation
 ----------------------------
 
 **Unweighted and Undirected**
+
 *1. Implementation using STL Vectors* 
+
 V in the function call represents the number of nodes - remember to change the placeholder to the required value or input. Don''t forget to account of the fact that the given graph deals entirely from index 0. Vectors used. Code for Adjacency list implementation taken from [GeeksforGeeks](http://www.geeksforgeeks.org/graph-implementation-using-stl-for-competitive-programming-set-1-dfs-of-unweighted-and-undirected/), presented with minor modifications. 
 
 ~~~~
@@ -59,6 +61,7 @@ void addEdge(vector<int> adj[], int u, int v)
 ~~~~
 
 **Weighted and Directed**
+
 *1. Implementation using STL Vectors and Pairs*
 
 V in the function call represents the number of nodes - remember to change the placeholder to the required value or input. Don't forget to account of the fact that the given graph deals entirely from index 0. Vectors and Pairs used, with pair for weight. Code for Adjacency list implementation taken from [GeeksforGeeks](http://www.geeksforgeeks.org/graph-implementation-using-stl-for-competitive-programming-set-2-weighted-graph/), presented with minor modifications. 
