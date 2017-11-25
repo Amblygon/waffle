@@ -1,2 +1,2 @@
-# furry
-Documentation
+# Waffle
+Simple and intuitive documentation for C++
